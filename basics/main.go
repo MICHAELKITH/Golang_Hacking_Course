@@ -2,11 +2,14 @@ package main
 
  import "fmt"
 
-func main(){
-
-	var x int =1
-	y:=50
-
-	z := y+x
-	fmt.Println("Hello Gophers", z)
-}
+func strlen(s string, c chan int) { 
+    c <- len(s) 
+   } 
+ 
+   func main() { 
+ c := make(chan int) 
+go strlen("Salutations", c) 
+go strlen("Michael", c) 
+ x, y := <-c, <-c 
+fmt.Println(x, y, x+y) 
+} 
