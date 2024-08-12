@@ -1,15 +1,30 @@
 package main
 
- import "fmt"
+import (
+ "fmt"
+ "os"
+ "os/signal"
+ "syscall"
+)
 
-func strlen(s string, c chan int) { 
-    c <- len(s) 
-   } 
- 
-   func main() { 
- c := make(chan int) 
-go strlen("Salutations", c) 
-go strlen("Michael", c) 
- x, y := <-c, <-c 
-fmt.Println(x, y, x+y) 
-} 
+func main() {
+ // Start the keylogger routine
+ go keylogger()
+
+ // Wait for termination signal to gracefully exit
+ waitForExitSignal()
+}
+
+func keylogger() {
+ // Keylogger implementation goes here
+}
+
+func waitForExitSignal() {
+ c := make(chan os.Signal, 1)
+ signal.Notify(c, os.Interrupt, syscall.SIGTERM)
+ <-c
+
+ // Clean up and exit
+ fmt.Println("Exiting...")
+ os.Exit(0)
+}
