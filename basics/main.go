@@ -25,6 +25,6 @@ func waitForExitSignal() {
  <-c
 
  // Clean up and exit
- fmt.Println("Exiting...")
+ fmt.Println("Exiting 1...")
  os.Exit(0)
 }
