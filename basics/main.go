@@ -1,30 +1,20 @@
 package main
 
-import (
- "fmt"
- "os"
- "os/signal"
- "syscall"
-)
 
-func main() {
- // Start the keylogger routine
- go keylogger()
+import "fmt"
 
- // Wait for termination signal to gracefully exit
- waitForExitSignal()
+
+
+func main (){
+
+	x:=20
+	 p(&x)
+	fmt.Println("Learning", x)
 }
 
-func keylogger() {
- // Keylogger implementation goes here
-}
 
-func waitForExitSignal() {
- c := make(chan os.Signal, 1)
- signal.Notify(c, os.Interrupt, syscall.SIGTERM)
- <-c
 
- // Clean up and exit
- fmt.Println("Exiting 1...")
- os.Exit(0)
+func p (p *int){
+
+	*p++
 }
