@@ -13,7 +13,7 @@ func main() {
     }
 
     for _, device := range devices {
-        fmt.Println("Device Name:", device.Name)
+        fmt.Println("Device one:", device.Name)
         fmt.Println("Device Description:", device.Description)
     }
 }
