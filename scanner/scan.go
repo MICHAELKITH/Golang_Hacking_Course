@@ -7,9 +7,9 @@ func main(){
     go strl("Michael", c)
 
 
-    x := <- c
+    y := <- c
 
-    fmt.Println(" The string length is ", x)
+    fmt.Println(" The string length is ", y)
 }
 
 
