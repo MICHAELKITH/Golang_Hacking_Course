@@ -4,7 +4,7 @@ package main
 func main(){
     c := make(chan int)
 
-    go strl("Michael", c)
+    go strl("Golang", c)
 
 
     y := <- c
