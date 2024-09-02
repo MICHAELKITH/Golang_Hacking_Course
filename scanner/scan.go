@@ -1,20 +1,27 @@
+//Hacking websites
+
 package main
 
-  import "fmt"
-func main(){
-    c := make(chan int)
+import (
+	"fmt"
+	"net"
+)
 
-    go strl("Golang", c)
+func main() {
+	//Tcp
+	//scann more ports
 
+	//for loop
 
-    y := <- c
+	for i := 1; i <= 1024; i++ {
+		address := fmt.Sprintf("scanme.nmap.org:%d", i)
+		conn, err := net.Dial("tcp", address)
 
-    fmt.Println(" The string length is ", y)
-}
+		if err != nil {
+			continue
+		}
+		conn.Close()
 
-
-func strl(s string , c chan int){
-
-  c <- len(s)
-
+		fmt.Printf("%d open\n", i)
+	}
 }
