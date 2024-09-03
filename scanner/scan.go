@@ -17,8 +17,8 @@ func main() {
 		address := fmt.Sprintf("scanme.nmap.org:%d", i)
 		conn, err := net.Dial("tcp", address)
 
-		if err != nil {
-			continue
+		if err == nil {
+			break
 		}
 		conn.Close()
 
