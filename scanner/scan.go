@@ -17,11 +17,11 @@ func main() {
 		address := fmt.Sprintf("scanme.nmap.org:%d", i)
 		conn, err := net.Dial("tcp", address)
 
-		if err == nil {
-			break
+		if err != nil {
+			continue
 		}
 		conn.Close()
 
-		fmt.Printf("%d open\n", i)
+		fmt.Printf("%d open ports \n", i)
 	}
 }
