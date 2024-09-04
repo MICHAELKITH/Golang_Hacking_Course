@@ -1,19 +1,27 @@
+//Hacking websites
+
 package main
 
 import (
 	"fmt"
 	"net"
-	"time"
 )
 
 func main() {
+	//Tcp
+	//scann more ports
+
+	//for loop
+
 	for i := 1; i <= 1024; i++ {
 		address := fmt.Sprintf("scanme.nmap.org:%d", i)
-		conn, err := net.DialTimeout("tcp", address, 1*time.Second)
+		conn, err := net.Dial("tcp", address)
+
 		if err != nil {
 			continue
 		}
 		conn.Close()
-		fmt.Printf("Port this number %d is open\n", i)
+
+		fmt.Printf("%d open ports \n", i)
 	}
 }
