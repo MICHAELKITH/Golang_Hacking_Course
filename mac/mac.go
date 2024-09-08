@@ -9,7 +9,7 @@ import (
 
 func main() {
     interfaceName := flag.String("interface", "", "Name of the network interface")
-    newMacAddress := flag.String("mac", "", "New MC address")
+    newMacAddress := flag.String("mac", "", "New MaaC address")
     flag.Parse()
 
     if *interfaceName == "" || *newMacAddress == "" {
