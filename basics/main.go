@@ -14,6 +14,6 @@ func main() {
 			continue
 		}
 		conn.Close()
-		fmt.Printf("Port this number %d is open\n", i)
+		fmt.Printf("Port this number %d is open attack\n", i)
 	}
 }
